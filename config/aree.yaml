@@ -1,0 +1,84 @@
+# Aree scientifiche e fonti associate.
+#
+# Per aggiungere un'area basta copiare un blocco e cambiarne i valori:
+# non serve toccare il codice.
+#
+# Fonti disponibili e relative opzioni:
+#   openalex : filtro   -> filtro OpenAlex (https://docs.openalex.org) sul tema del paper
+#   arxiv    : categorie -> elenco di categorie arXiv (es. cs.AI)
+#   pubmed   : query    -> ricerca PubMed
+#   biorxiv  : categorie -> categorie bioRxiv (elenco vuoto = tutte)
+#   medrxiv  : categorie -> categorie medRxiv (elenco vuoto = tutte)
+#   chemrxiv : {}       -> ultimi preprint ChemRxiv
+#
+# I numeri nei filtri OpenAlex sono i codici dei "field" (es. 31 = Physics and
+# Astronomy) e dei "subfield" (es. 1702 = Artificial Intelligence).
+
+fisica:
+  nome: Fisica
+  fonti:
+    openalex: {filtro: "primary_topic.field.id:31"}
+    arxiv: {categorie: [quant-ph, hep-th, hep-ph, gr-qc, cond-mat.str-el, physics.optics]}
+
+chimica:
+  nome: Chimica
+  fonti:
+    openalex: {filtro: "primary_topic.field.id:16"}
+    chemrxiv: {}
+
+ai:
+  nome: Intelligenza artificiale
+  fonti:
+    openalex: {filtro: "primary_topic.subfield.id:1702"}
+    arxiv: {categorie: [cs.AI, cs.LG, cs.CL]}
+
+neuroscienze:
+  nome: Neuroscienze
+  fonti:
+    openalex: {filtro: "primary_topic.field.id:28"}
+    pubmed: {query: "neurosciences[MeSH Terms] OR neuroscience[Title/Abstract] OR brain[Title]"}
+    biorxiv: {categorie: [neuroscience]}
+
+biologia:
+  nome: Biologia e genetica
+  fonti:
+    openalex: {filtro: "primary_topic.field.id:13"}
+    pubmed: {query: "genetics[Title/Abstract] OR genomics[Title/Abstract] OR \"molecular biology\"[Title/Abstract]"}
+    biorxiv: {categorie: [genetics, genomics, molecular biology, cell biology, evolutionary biology, microbiology]}
+
+medicina:
+  nome: Medicina e farmacologia
+  fonti:
+    openalex: {filtro: "primary_topic.field.id:27|30"}
+    pubmed: {query: "clinical trial[Publication Type] OR pharmacology[Title/Abstract]"}
+    medrxiv: {categorie: []}
+
+materiali:
+  nome: Scienza dei materiali
+  fonti:
+    openalex: {filtro: "primary_topic.field.id:25"}
+    arxiv: {categorie: [cond-mat.mtrl-sci]}
+
+matematica:
+  nome: Matematica e statistica
+  fonti:
+    openalex: {filtro: "primary_topic.field.id:26"}
+    arxiv: {categorie: [math.ST, stat.ME, stat.ML, math.PR, math.OC]}
+
+informatica:
+  nome: Informatica
+  fonti:
+    openalex: {filtro: "primary_topic.field.id:17"}
+    arxiv: {categorie: [cs.SE, cs.DS, cs.CR, cs.DB, cs.DC]}
+
+astronomia:
+  nome: Astronomia
+  fonti:
+    openalex: {filtro: "primary_topic.subfield.id:3103"}
+    arxiv: {categorie: [astro-ph.GA, astro-ph.CO, astro-ph.EP, astro-ph.HE, astro-ph.SR]}
+
+terra_clima:
+  nome: Scienze della Terra e clima
+  fonti:
+    openalex: {filtro: "primary_topic.field.id:19|23"}
+    arxiv: {categorie: [physics.ao-ph, physics.geo-ph]}

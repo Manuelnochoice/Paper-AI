@@ -1,0 +1,13 @@
+# Insieme fisso di paper per confrontare versioni diverse del modello o del prompt.
+# Sono paper noti e stabili, uno per tipo di studio, così i risultati sono confrontabili
+# nel tempo. Per aggiungerne uno basta una nuova voce con nome (senza spazi) e DOI.
+
+paper:
+  - nome: transformer_computazionale
+    doi: 10.48550/arxiv.1706.03762        # Attention Is All You Need (arXiv, testo completo)
+  - nome: alphafold_computazionale
+    doi: 10.1038/s41586-021-03819-2       # AlphaFold, Nature 2021
+  - nome: recovery_clinico
+    doi: 10.1056/nejmoa2021436            # Desametasone nel COVID-19, NEJM 2021
+  - nome: deep_learning_revisione
+    doi: 10.1038/nature14539              # Deep learning, Nature 2015 (revisione)

@@ -1,0 +1,45 @@
+# Impostazioni generali di Paper Radar.
+# Tutto ciò che può cambiare senza toccare il codice sta qui.
+
+raccolta:
+  automatica: true      # all'apertura dell'app, una volta al giorno, cerca i nuovi paper
+  giorni: 7              # quanto indietro guardare (ultimi N giorni)
+  max_nuovi_per_fonte: 30   # nuovi paper da salvare per fonte a ogni raccolta
+  max_pagine: 4          # pagine al massimo per fonte (protegge i limiti delle API)
+  timeout_secondi: 25
+  tentativi: 3
+  email_contatto: ""     # facoltativa: arXiv e PubMed la gradiscono per le richieste
+
+llm:
+  # I modelli sono provati nell'ordine: se il primo ha finito la quota del
+  # giorno si passa al successivo (più leggero).
+  # RPM = richieste al minuto, RPD = richieste al giorno.
+  # I limiti reali del TUO progetto si leggono su https://aistudio.google.com/rate-limit
+  modelli:
+    - nome: gemini-3.8-flash
+      rpm: 5
+      rpd: 20
+    - nome: gemini-3.5-flash-lite
+      rpm: 15
+      rpd: 500
+  temperatura: 0.2
+  tentativi_json: 2        # nuovi tentativi se il JSON è malformato
+  tentativi_429: 3         # nuovi tentativi (con attesa crescente) su errore 429
+  max_caratteri_testo: 60000   # il testo completo viene tagliato oltre questo limite
+
+traduzione:
+  # Titolo e abstract in italiano negli elenchi. Usa il modello più leggero,
+  # che ha molte più richieste al giorno, e traduce più paper per richiesta.
+  modello: gemini-3.5-flash-lite
+  paper_per_richiesta: 6
+
+contesto:
+  max_riferimenti: 12    # paper citati dal paper
+  max_citanti: 8         # paper che citano il paper
+  max_correlati: 8       # "related works" di OpenAlex
+
+grafo:
+  soglia_similarita: 0.15   # similarità minima (0-1) tra abstract per creare un arco
+  max_simili: 8
+
+database: dati/paper_radar.db

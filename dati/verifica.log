@@ -1,0 +1,72 @@
+
+=================================== ERRORS ====================================
+____________________ ERROR collecting tests/test_grafo.py _____________________
+ImportError while importing test module 'C:\Users\manue\OneDrive\Desktop\paper_AI\tests\test_grafo.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\AppData\Local\Python\pythoncore-3.14-64\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_grafo.py:3: in <module>
+    from paper_radar.servizi.grafo import costruisci_grafo
+paper_radar\servizi\grafo.py:13: in <module>
+    from sklearn.feature_extraction.text import TfidfVectorizer
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\sklearn\__init__.py:70: in <module>
+    from sklearn.base import clone  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\sklearn\base.py:20: in <module>
+    from sklearn.utils._metadata_requests import _MetadataRequester, _routing_enabled
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\sklearn\utils\__init__.py:9: in <module>
+    from sklearn.utils._chunking import gen_batches, gen_even_slices
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\sklearn\utils\_chunking.py:11: in <module>
+    from sklearn.utils._param_validation import Interval, validate_params
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\sklearn\utils\_param_validation.py:14: in <module>
+    from scipy.sparse import csr_array, issparse
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\scipy\sparse\__init__.py:251: in <module>
+    from ._csr import *
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\scipy\sparse\_csr.py:15: in <module>
+    from ._compressed import _cs_matrix
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\scipy\sparse\_compressed.py:8: in <module>
+    from scipy._lib._util import _prune_array, copy_if_needed
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\scipy\_lib\_util.py:16: in <module>
+    from scipy._lib._array_api import (Array, array_namespace, is_lazy_array, is_numpy,
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\scipy\_lib\_array_api.py:24: in <module>
+    from scipy._external.array_api_compat import (
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\scipy\_external\array_api_compat\numpy\__init__.py:9: in <module>
+    __all__ = clone_module("numpy", globals())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\scipy\_external\array_api_compat\_internal.py:64: in clone_module
+    exec(f"from {mod.__name__} import *", objs)
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\numpy\__init__.py:727: in __getattr__
+    import numpy.random as random
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\numpy\random\__init__.py:180: in <module>
+    from . import _bounded_integers, _common, _pickle
+..\..\..\AppData\Local\PaperRadar\venv\Lib\site-packages\numpy\random\_pickle.py:5: in <module>
+    from ._sfc64 import SFC64
+E   ImportError: DLL load failed while importing _sfc64: Un criterio di controllo dell'applicazione ha bloccato il file.
+=========================== short test summary info ===========================
+ERROR tests/test_grafo.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 50.14s
+== Chiavi ==
+   Variabili nel file .env: GEMINI_API_KEY, OPENALEX_API_KEY
+[OK] GEMINI_API_KEY - presente
+[OK] OPENALEX_API_KEY - presente
+
+== Modelli Gemini ==
+[OK] gemini-3.8-flash - disponibile
+[OK] gemini-3.5-flash-lite - disponibile
+   Modelli 'flash' disponibili: gemini-2.5-flash, gemini-2.5-flash-preview-tts, gemini-flash-latest, gemini-flash-lite-latest, gemini-2.5-flash-lite, gemini-2.5-flash-image, gemini-3-flash-preview, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3.1-flash-image-preview, gemini-3.1-flash-image, gemini-3.1-flash-lite-image, gemini-3.5-flash, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-omni-1.2-flash, gemini-3.6-flash, gemini-3.7-flash, gemini-3.8-flash, gemini-3.1-flash-tts-preview, gemini-3.8-flash-tts, gemini-3.8-flash-lite-tts
+
+== Fonti (prima pagina di un'area per ciascuna) ==
+[OK] openalex (fisica) - 50 paper, 50 recenti es. «Analogue Shear-to-Entropy Response as a Simulated Test of a » (2026-11-12)
+[OK] arxiv (fisica) - 50 paper, 50 recenti es. «Solving the SU(2) BFSS model» (2026-11-10)
+[ERRORE] chemrxiv (chimica) - chemrxiv.org: richiesta rifiutata (HTTP 403)
+[OK] pubmed (neuroscienze) - 38 paper, 38 recenti es. «Synthetic torpor in the rat protects the heart from ischaemi» (2026-11-12)
+[OK] biorxiv (neuroscienze) - 2 paper, 2 recenti es. «Early visual cortex is not functionally necessary for tempor» (2026-11-09)
+[OK] medrxiv (medicina) - 30 paper, 30 recenti es. «Single-cell profiling of human plaques reveals cellular and » (2026-11-09)
+
+== Grafo con dati reali ==
+[OK] grafo - 28 collegati da OpenAlex, 29 nodi, 28 archi, tipi: ['cita', 'correlato']
+
+1 controlli non riusciti.

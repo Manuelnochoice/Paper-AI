@@ -1,0 +1,17 @@
+# Interfaccia
+streamlit>=1.50
+
+# Dati e configurazione
+requests>=2.31
+PyYAML>=6.0
+python-dotenv>=1.0
+pydantic>=2.6                # validazione del JSON prodotto dal modello
+
+# Testo completo dai PDF ad accesso aperto (libreria in Python puro)
+pypdf>=4.0
+
+# Fusi orari su Windows (le quote di Gemini si azzerano a mezzanotte del Pacifico)
+tzdata
+
+# Test
+pytest>=8.0
